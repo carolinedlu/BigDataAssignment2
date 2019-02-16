@@ -16,11 +16,14 @@ public class HostCountMapper extends Mapper<LongWritable, Text, Text, Text> {
         String line = value.toString();
         String[] tokens = line.split("\\s");
         String bytes = new String();
-        if (tokens.length == 8) {
-            bytes = tokens[7]; //Get byte count
-        } if (tokens.length == 7) {
-            bytes = "0";
-        }
+        bytes = tokens[5];
+        
+        
+       // if (tokens.length == 8) {
+       //     bytes = tokens[7]; //Get byte count
+       // } if (tokens.length == 7) {
+        //    bytes = "0";
+        //}
         String timestamp = new String();
         timestamp = tokens[1]; //Get timestamp
         context.write(new Text(bytes), new Text(timestamp));
