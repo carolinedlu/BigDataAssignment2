@@ -15,40 +15,11 @@ public class HostCountReducer extends Reducer<Text, Text, LongWritable, DoubleWr
         int i = 0;
         String strKey = key.toString();
         Long bytes = Long.parseLong(strKey);
-        double timeStamp = 0;
-                
-//         for (Text value : values) {
-//             String val = value.toString();
-//             timeStamp = 0;
-//            // timeStamp = Double.parseDouble(String.format("%.5f", val));
-            
-
-//         if (i == 0) {
-//             max = timeStamp; //To start off, set the first value as the max
-//             min = timeStamp; //Set the first value as the min as well
-//             i = 1;
-//         }
-//         if (i != 0) {
-//             if (timeStamp > max) {
-//                 max = timeStamp;
-//             } if (timeStamp < min) {
-//                 min = timeStamp;
-//             }
-//         }
-//         }
-                   
-//         for (Text key : keys) { //Is this iteration correct? No -- I think this can be done more easily in the command line?
-//             String stringKey = key.toString();
-//             long bytes = Long.parseLong(stringKey);
-//             totalBytes += bytes; //Sum all the bytes
-//         }
-        
-        
-        double elapsedTime = max - min;
-        
+        double timeStamp = 0;      
+         for (Text value : values) {
+          String val = value.toString();
+          timeStamp = Double.parseDouble(val);
+         }        
         context.write(new LongWritable(bytes), new DoubleWritable(timeStamp));
-
-        
-        //context.write(new DoubleWritable(bytes), new DoubleWritable(elapsedTime));
     }
 }
