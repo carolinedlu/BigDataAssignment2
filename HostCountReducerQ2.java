@@ -44,6 +44,9 @@ public class HostCountReducer extends Reducer<Text, Text, DoubleWritable, Double
         
         double elapsedTime = max - min;
         
-        context.write(new DoubleWritable(bytes), new DoubleWritable(elapsedTime));
+        context.write(new DoubleWritable(bytes), new DoubleWritable(timeStamp));
+
+        
+        //context.write(new DoubleWritable(bytes), new DoubleWritable(elapsedTime));
     }
 }
