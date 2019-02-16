@@ -22,5 +22,8 @@ Run ./hadoop_java.sh HostCount
 
 Run ./hadoop_mapred.sh HostCount /user/clu123/input/ADU-only_2009-04-01_anon_100K /user/clu123/output
 
-hadoop fs -ls /path/here
-hadoop fs -cat /path/here
+
+USEFUL COMMANDS:
+hadoop fs -ls /path/here;
+hadoop fs -cat /path/here;
+hadoop fs -copyToLocal /user/clu123/ADU/output/part-r-00000 /home/clu123/comp-590/res
