@@ -19,7 +19,8 @@ public class HostCountReducer extends Reducer<Text, Text, DoubleWritable, Double
                 
         for (Text value : values) {
             String val = value.toString();
-            timeStamp = Double.parseDouble(val);
+            timeStamp = Double.parseDouble(String.format("%.5f", val));
+            
 
         if (i == 0) {
             max = timeStamp; //To start off, set the first value as the max
