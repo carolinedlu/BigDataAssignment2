@@ -14,7 +14,7 @@ public class HostCountReducer extends Reducer<Text, Text, DoubleWritable, Double
         double min = -1;
         int i = 0;
         String strKey = key.toString();
-        double bytes = Double.parseDouble(strKey);
+        Long bytes = Long.parseLong(strKey);
         double timeStamp = 0;
                 
         for (Text value : values) {
@@ -45,7 +45,7 @@ public class HostCountReducer extends Reducer<Text, Text, DoubleWritable, Double
         
         double elapsedTime = max - min;
         
-        context.write(new DoubleWritable(bytes), new DoubleWritable(timeStamp));
+        context.write(new LongWritable(bytes), new DoubleWritable(timeStamp));
 
         
         //context.write(new DoubleWritable(bytes), new DoubleWritable(elapsedTime));
