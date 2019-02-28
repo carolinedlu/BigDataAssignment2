@@ -1,6 +1,6 @@
 # smith-590-a2
 
-View assignment: https://drive.google.com/file/d/1Y0E0Sb1dbeYR6T0C5SHg2HjdpjaFfZZe/view?usp=sharing
+View assignment: https://tinyurl.com/BigDataAssignment2
 
 Q1: What is the most popular application at this time of day? Least popular? etc. -- Mila
 
